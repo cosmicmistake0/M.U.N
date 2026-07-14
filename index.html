@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script defer src="scripts/app.js"></script>
+    <title>M.U.N</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="head-text">M.U.N</h1>
+    </header>
+    <main>
+      <div class="container">
+        <div class="map-container">
+          <div class="forecast-hours">
+            <button>00H</button>
+            <button>12H</button>
+            <button>24H</button>
+            <button>36H</button>
+            <button>48H</button>
+            <button>60H</button>
+            <button>72H</button>
+          </div>
+          <div class="weather-variable">
+            <ul>
+              <li>
+                <a href=""
+                  ><div class="weather-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          d="M8 15.9998C7.44772 15.9998 7 16.4475 7 16.9998C7 17.5521 7.44772 17.9998 8 17.9998C8.55228 17.9998 9 17.5521 9 16.9998C9 16.4475 8.55228 15.9998 8 15.9998ZM8 15.9998L8.00707 12M8 16.9998L8.00707 17.0069M20 5C20 6.10457 19.1046 7 18 7C16.8954 7 16 6.10457 16 5C16 3.89543 16.8954 3 18 3C19.1046 3 20 3.89543 20 5ZM12 16.9998C12 19.209 10.2091 20.9998 8 20.9998C5.79086 20.9998 4 19.209 4 16.9998C4 15.9854 4.37764 15.0591 5 14.354L5 6C5 4.34315 6.34315 3 8 3C9.65685 3 11 4.34315 11 6V14.354C11.6224 15.0591 12 15.9854 12 16.9998Z"
+                          stroke="#ffd85a"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                </a>
+                <p>Temperature</p>
+              </li>
+              <li>
+                <a href="">
+                  <div class="weather-icon">
+                    <svg
+                      viewBox="0 0 32 32"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+                      fill="#000000"
+                    >
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <title>rain-2</title>
+                        <desc>Created with Sketch Beta.</desc>
+                        <defs></defs>
+                        <g
+                          id="Page-1"
+                          stroke="none"
+                          stroke-width="1"
+                          fill="none"
+                          fill-rule="evenodd"
+                          sketch:type="MSPage"
+                        >
+                          <g
+                            id="Icon-Set"
+                            sketch:type="MSLayerGroup"
+                            transform="translate(-153.000000, -827.000000)"
+                            fill="#ffd85a"
+                          >
+                            <path
+                              d="M175,849 L161,849 C161,849 154.962,848.381 155,843 C155.021,839.964 157.813,837.25 161,837 C161,832.858 163.651,829 168,829 C171.433,829 173.723,831.096 174.539,834.014 C179.493,833.798 182.844,837.718 183,841 C183.21,845.413 178.601,849 175,849 L175,849 Z M176.067,832.028 C174.599,829.053 171.543,827 168,827 C163.25,827 159.37,830.682 159.033,835.345 C155.542,836.34 153,839.39 153,843 C153,847.26 156.54,850.731 161,850.977 C161,850.977 174.831,851 175,851 C180.247,851 185,846.747 185,841.5 C185,836.445 181.048,832.323 176.067,832.028 L176.067,832.028 Z M178,854 C177.448,854 177,854.447 177,855 L177,858 C177,858.553 177.448,859 178,859 C178.552,859 179,858.553 179,858 L179,855 C179,854.447 178.552,854 178,854 L178,854 Z M172,854 C171.448,854 171,854.447 171,855 L171,858 C171,858.553 171.448,859 172,859 C172.552,859 173,858.553 173,858 L173,855 C173,854.447 172.552,854 172,854 L172,854 Z M160,854 C159.448,854 159,854.447 159,855 L159,858 C159,858.553 159.448,859 160,859 C160.552,859 161,858.553 161,858 L161,855 C161,854.447 160.552,854 160,854 L160,854 Z M166,854 C165.448,854 165,854.447 165,855 L165,858 C165,858.553 165.448,859 166,859 C166.552,859 167,858.553 167,858 L167,855 C167,854.447 166.552,854 166,854 L166,854 Z"
+                              id="rain-2"
+                              sketch:type="MSShapeGroup"
+                            ></path>
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                </a>
+                <p>Rainfall</p>
+              </li>
+              <li>
+                <a href="">
+                  <div class="weather-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          d="M15.7639 7C16.3132 6.38625 17.1115 6 18 6C19.6569 6 21 7.34315 21 9C21 10.6569 19.6569 12 18 12H3M8.50926 4.66667C8.87548 4.2575 9.40767 4 10 4C11.1046 4 12 4.89543 12 6C12 7.10457 11.1046 8 10 8H3M11.5093 19.3333C11.8755 19.7425 12.4077 20 13 20C14.1046 20 15 19.1046 15 18C15 16.8954 14.1046 16 13 16H3"
+                          stroke="#ffd85a"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                </a>
+                <p>Wind</p>
+              </li>
+            </ul>
+          </div>
+          <div id="map"></div>
+        </div>
+        <div class="forecast-panel">
+          <div class="state">
+            <h2>Abuja</h2>
+          </div>
+
+          <div class="weather">
+            <div class="day">
+              <h3 class="date">Sat, 4 Jul</h3>
+
+              <div class="forecast-period">
+                <h4 class="time">Morning</h4>
+                <p>Temperature: 29°C</p>
+                <p>Rain: Light rain</p>
+                <p>Wind: SW 4 m/s</p>
+              </div>
+
+              <div class="forecast-period">
+                <h4 class="time">Evening</h4>
+                <p>Temperature: 25°C</p>
+                <p>Rain: Moderate rain</p>
+                <p>Wind: SW 3 m/s</p>
+              </div>
+            </div>
+
+            <div class="day">
+              <h3 class="date">Sun, 5 Jul</h3>
+
+              <div class="forecast-period">
+                <h4 class="time">Morning</h4>
+                <p>Temperature: 30°C</p>
+                <p>Rain: Light rain</p>
+                <p>Wind: SW 5 m/s</p>
+              </div>
+
+              <div class="forecast-period">
+                <h4 class="time">Evening</h4>
+                <p>Temperature: 26°C</p>
+                <p>Rain: Cloudy</p>
+                <p>Wind: SW 4 m/s</p>
+              </div>
+            </div>
+
+            <div class="day">
+              <h3 class="date">Mon, 6 Jul</h3>
+
+              <div class="forecast-period">
+                <h4 class="time">Morning</h4>
+                <p>Temperature: 29°C</p>
+                <p>Rain: Heavy rain</p>
+                <p>Wind: SW 6 m/s</p>
+              </div>
+
+              <div class="forecast-period">
+                <h4 class="time">Evening</h4>
+                <p>Temperature: 24°C</p>
+                <p>Rain: Light rain</p>
+                <p>Wind: SW 4 m/s</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
+<!-- ☀ Morning
+🌡 29°C
+🌧 Light Rain
+💨 SW 4 m/s -->
+
+<!-- temperature -->
+
+<!-- rainfall -->
+
+<!-- wind -->
