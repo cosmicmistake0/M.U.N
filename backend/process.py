@@ -280,11 +280,11 @@ for forecast_hour in forecast_hours:
         f"{overlay_folder}/wind850_{forecast_hour}.png"
     )
 
-    # create_wind_overlay(
-    #     path,
-    #     700,
-    #     f"{overlay_folder}/wind700_{forecast_hour}.png"
-    # )
+    create_wind_overlay(
+        path,
+        700,
+        f"{overlay_folder}/wind700_{forecast_hour}.png"
+    )
 
     create_10wind_overlay(
         path,

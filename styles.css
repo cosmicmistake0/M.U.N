@@ -76,7 +76,7 @@ body {
   position: relative;
   width: 50rem;
 
-  /* aspect-ratio: 1; */
+  aspect-ratio: 1;
 }
 .forecast-panel {
   padding: 1rem;
@@ -154,10 +154,12 @@ svg {
   display: block;
   height: 100%;
 }
-.weather-variable a {
+.weather-variable button {
   align-items: center;
   display: flex;
   text-decoration: none;
+  background-color: transparent;
+  border: none;
 
   color: var(--text);
 }
@@ -170,7 +172,7 @@ ul {
   display: flex;
   gap: 1rem;
 }
-button:hover {
+.forecast-hours button:hover {
   background-color: var(--hover);
   color: var(--panel);
   border: var(--hover ri);
