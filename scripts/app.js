@@ -1,9 +1,11 @@
+const response = await fetch("/backend/data/20260711/forecast.json");
+const forecast = await response.json();
 var map = L.map("map");
 map.fitBounds([
   [0.483, -2.8],
   [17.517, 18.233],
 ]);
-imageBounds = [
+let imageBounds = [
   [
     [0.483, -2.8],
     [17.517, 18.233],

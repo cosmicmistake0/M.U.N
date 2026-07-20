@@ -4,7 +4,10 @@ import datetime
 import matplotlib.pyplot as plt      
 import cartopy, cartopy.crs as ccrs  
 import numpy as np       
-import pygrib       
+import pygrib     
+import json
+
+
 forecast = {}
 states = {
 
@@ -340,4 +343,6 @@ for forecast_hour in forecast_hours:
         forecast
     )
 
-print(forecast)
+
+with open(f"{folder}/forecast.json", "w") as file:
+    json.dump(forecast, file, indent=4)  
