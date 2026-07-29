@@ -177,3 +177,7 @@ ul {
   color: var(--panel);
   border: var(--hover ri);
 }
+.state-label {
+  font-size: 0.8rem;
+  color: white;
+}

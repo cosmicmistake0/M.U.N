@@ -9,117 +9,81 @@ import json
 
 
 forecast = {}
-states = {
+capitals = {
 
-   
-    "Abia": {"lat": 5.53294, "lon": 7.49433},
+    "Umuahia": {"lat": 5.53294, "lon": 7.49433},
 
-  
-    "Adamawa": {"lat": 9.20893, "lon": 12.48025},
+    "Yola": {"lat": 9.20893, "lon": 12.48025},
 
-    
-    "Akwa Ibom": {"lat": 4.99008, "lon": 7.91473},
+    "Uyo": {"lat": 4.99008, "lon": 7.91473},
 
-    
-    "Anambra": {"lat": 6.21895, "lon": 7.07744},
+    "Awka": {"lat": 6.21895, "lon": 7.07744},
 
-    
     "Bauchi": {"lat": 11.01370, "lon": 9.88625},
 
-     
-    "Bayelsa": {"lat":  5.06532, "lon": 6.35700},
+    "Yenagoa": {"lat": 5.06532, "lon": 6.35700},
 
-   
-    "Benue": {"lat": 7.73714, "lon": 8.51782},
+    "Makurdi": {"lat": 7.73714, "lon": 8.51782},
 
-     
-    "Borno": {"lat": 11.83347, "lon": 13.13015},
+    "Maiduguri": {"lat": 11.83347, "lon": 13.13015},
 
-    
-    "Cross River": {"lat": 4.97960, "lon": 8.33736},
+    "Calabar": {"lat": 4.97960, "lon": 8.33736},
 
-    
-    "Delta": {"lat": 6.1858, "lon": 6.72971},
+    "Asaba": {"lat": 6.18580, "lon": 6.72971},
 
-    
-    "Ebonyi": {"lat": 6.2613, "lon": 8.22774},
+    "Abakaliki": {"lat": 6.26130, "lon": 8.22774},
 
-     
-    "Edo": {"lat": 6.33306, "lon": 5.62211},
+    "Benin City": {"lat": 6.33306, "lon": 5.62211},
 
-    
-    "Ekiti": {"lat":  7.60575, "lon": 5.25286},
+    "Ado-Ekiti": {"lat": 7.60575, "lon": 5.25286},
 
-     
-    "Enugu": {"lat":  6.51450, "lon": 7.41753},
+    "Enugu": {"lat": 6.51450, "lon": 7.41753},
 
-     
-    "FCT": {"lat": 9.06590, "lon": 7.47208},
+    "Abuja": {"lat": 9.06590, "lon": 7.47208},
 
-     
-    "Gombe": {"lat":  9.66151, "lon": 11.49170},
+    "Gombe": {"lat": 9.66151, "lon": 11.49170},
 
-     
-    "Imo": {"lat":5.48974, "lon":7.03420},
+    "Owerri": {"lat": 5.48974, "lon": 7.03420},
 
-     
-    "Jigawa": {"lat": 11.80712, "lon": 9.30993},
+    "Dutse": {"lat": 11.80712, "lon": 9.30993},
 
-     
     "Kaduna": {"lat": 10.26472, "lon": 7.45503},
 
-    
-    "Kano": {"lat": 11.99400, "lon": 8.5219},
+    "Kano": {"lat": 11.99400, "lon": 8.52190},
 
-   
     "Katsina": {"lat": 12.23787, "lon": 7.94967},
- 
-    "Kebbi": {"lat":12.47504, "lon": 4.26391},
 
-    
-    "Kogi": {"lat": 8.23487, "lon": 6.45264},
+    "Birnin Kebbi": {"lat": 12.47504, "lon": 4.26391},
 
-     
-    "Kwara": {"lat":  8.49637, "lon": 4.54805},
+    "Lokoja": {"lat": 8.23487, "lon": 6.45264},
 
-     
-    "Lagos": {"lat":  6.60487, "lon": 3.34666},
+    "Ilorin": {"lat": 8.49637, "lon": 4.54805},
 
-     
-    "Nasarawa": {"lat":  8.71136, "lon":8.62427},
+    "Ikeja": {"lat": 6.60487, "lon": 3.34666},
 
-     
-    "Niger": {"lat": 9.61871, "lon": 6.54758},
+    "Lafia": {"lat": 8.71136, "lon": 8.62427},
 
-     
-    "Ogun": {"lat": 7.16100, "lon": 3.34800},
+    "Minna": {"lat": 9.61871, "lon": 6.54758},
 
-     
-    "Ondo": {"lat": 7.25256, "lon": 5.19326},
+    "Abeokuta": {"lat": 7.16100, "lon": 3.34800},
 
-     
-    "Osun": {"lat": 7.75983, "lon": 4.56625},
+    "Akure": {"lat": 7.25256, "lon": 5.19326},
 
-     
-    "Oyo": {"lat": 7.37861, "lon":3.89699},
+    "Osogbo": {"lat": 7.75983, "lon": 4.56625},
 
-     
-    "Plateau": {"lat": 9.91751, "lon": 8.89794},
+    "Ibadan": {"lat": 7.37861, "lon": 3.89699},
 
-    
-    "Rivers": {"lat": 4.76862, "lon": 7.00923},
+    "Jos": {"lat": 9.91751, "lon": 8.89794},
 
-    
+    "Port Harcourt": {"lat": 4.76862, "lon": 7.00923},
+
     "Sokoto": {"lat": 12.71071, "lon": 5.48044},
 
-    
-    "Taraba": {"lat":  8.90675, "lon": 11.3384},
+    "Jalingo": {"lat": 8.90675, "lon": 11.33840},
 
-     
-    "Yobe": {"lat": 11.74700, "lon": 11.96080},
+    "Damaturu": {"lat": 11.74700, "lon": 11.96080},
 
-     
-    "Zamfara": {"lat": 12.00136, "lon":6.84302},
+    "Gusau": {"lat": 12.00136, "lon": 6.84302},
 }
 
 date = datetime.datetime.now().strftime("%Y%m%d")
@@ -150,7 +114,7 @@ def create_state_values(path, value, forecast_hour, forecast):
 
     data = data + value["offset"]
 
-    for state, coords in states.items():
+    for state, coords in capitals.items():
 
         city_lat = coords["lat"]
         city_lon = coords["lon"]
@@ -201,7 +165,7 @@ def create_10wind_overlay(path,  forecast_hour, forecast):
 
     data = np.sqrt(u**2 + v**2)
 
-    for state, coords in states.items():
+    for state, coords in capitals.items():
 
         city_lat = coords["lat"]
         city_lon = coords["lon"]
@@ -256,7 +220,7 @@ def create_upper_wind_values(path, level, forecast_hour, forecast):
 
     wind_speed = np.sqrt(u**2 + v**2)
 
-    for state, coords in states.items():
+    for state, coords in capitals.items():
 
         city_lat = coords["lat"]
         city_lon = coords["lon"]
