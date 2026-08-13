@@ -142,6 +142,7 @@ body {
   position: absolute;
   top: 30%;
 }
+
 .weather-icon {
   width: 2rem;
   border: var(--border) solid;
@@ -175,9 +176,142 @@ ul {
 .forecast-hours button:hover {
   background-color: var(--hover);
   color: var(--panel);
-  border: var(--hover ri);
+  border: var(--hover);
 }
 .state-label {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: white;
+  width: 1rem;
+  border: var(--border) solid;
+
+  border-radius: 50%;
+  width: 100%;
+  padding: 0.2rem;
+}
+.state-label:hover {
+  color: var(--hover);
+}
+
+.legend {
+  padding: 0.4rem;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 1000;
+
+  border-radius: 0.4rem;
+  margin: 1rem;
+  width: 15rem;
+  color: var(--bg);
+  border: var(--hover) solid 2px;
+}
+.legend > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem;
+
+  margin: 0;
+}
+
+.legend p {
+  text-shadow: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  color: wheat;
+}
+
+.color {
+  border-radius: 0.2rem;
+  width: 2.5rem;
+  height: 1.7rem;
+  background-color: red;
+}
+.precip {
+  display: none;
+}
+.precip .zero {
+  background: #30123b;
+}
+.precip .one {
+  background: #321543;
+}
+.precip .two {
+  background: #341b51;
+}
+.precip .three {
+  background: #392a73;
+}
+.precip .four {
+  background: #4249b1;
+}
+.precip .five {
+  background: #477bf2;
+}
+.precip .six {
+  background: #20eaac;
+}
+.precip .seven {
+  background: #fb7e21;
+}
+.precip .eight {
+  background: #7a0403;
+}
+/* temperature */
+.temp {
+  display: none;
+}
+.temp-zero {
+  background: #220000;
+}
+.temp-one {
+  background: #810000;
+}
+.temp-two {
+  background: #e20000;
+}
+.temp-three {
+  background: #ff7300;
+}
+.temp-four {
+  background: #ffd200;
+}
+.temp-five {
+  background: #ffff95;
+}
+.temp-six {
+  background: #ffffff;
+}
+
+/* wind */
+.wind {
+  display: none;
+}
+.wind-zero {
+  background: #481f70;
+}
+.wind-one {
+  background: #3b528b;
+}
+.wind-two {
+  background: #287c8e;
+}
+.wind-three {
+  background: #20a486;
+}
+.wind-four {
+  background: #5ec962;
+}
+.wind-five {
+  background: #c8e020;
+}
+.wind-six {
+  background: #fde725;
+}
+.temperature-var {
+}
+.precip-var {
+}
+.wind-var {
 }

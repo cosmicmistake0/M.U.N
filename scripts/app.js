@@ -1,7 +1,7 @@
 const response = await fetch("/backend/data/20260711/forecast.json");
 const forecast = await response.json();
 var map = L.map("map");
-const forecastHour = ["f000", "f012", "f024", "f036", "f048", "f060", "f072"];
+const forecastHour = ["f000", "f012", "f024", "f036", "f048", "f060"];
 
 map.fitBounds([
   [0.483, -2.8],
@@ -13,6 +13,7 @@ let imageBounds = [
     [17.517, 18.233],
   ],
 ];
+map.setMaxBounds(imageBounds);
 let hour = "f000";
 let variable = "temperature";
 
@@ -22,9 +23,10 @@ let weather = L.imageOverlay(imageUrl, imageBounds, {
 }).addTo(map);
 
 var osm = L.tileLayer(
-  "https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png",
+  "https://tiles.stadiamaps.com/tiles/stamen_toner_background/{z}/{x}/{y}{r}.{ext}",
+
   {
-    minZoom: 0,
+    minZoom: 6,
     maxZoom: 20,
     attribution:
       '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -84,7 +86,7 @@ function showForecast(state) {
                     <h4 class="time">Morning</h4>
                     <p>Temperature: ${Math.round(morning.temperature)}°C</p>
                     <p>Rain: ${Math.round(morning.precipitation)} mm</p>
-                    <p>Wind: ${Math.round(morning.wind10m.cardinal)} ${Math.round(morning.wind10m.speed)} m/s</p>
+                    <p>Wind: ${morning.wind10m.cardinal} ${Math.round(morning.wind10m.speed)} m/s</p>
                 </div>
 
                 ${
@@ -94,7 +96,7 @@ function showForecast(state) {
                         <h4 class="time">Evening</h4>
                         <p>Temperature: ${Math.round(evening.temperature)}°C</p>
                         <p>Rain: ${Math.round(evening.precipitation)} mm</p>
-                        <p>Wind: ${Math.round(evening.wind10m.cardinal)} ${Math.round(evening.wind10m.speed)} m/s</p>
+                        <p>Wind: ${evening.wind10m.cardinal} ${Math.round(evening.wind10m.speed)} m/s</p>
                     </div>
                     `
                     : ""
@@ -186,13 +188,75 @@ const capitals = {
 
   Gusau: { lat: 12.00136, lon: 6.84302 },
 };
+const majorCities = L.layerGroup();
+const minorCities = L.layerGroup();
 Object.entries(capitals).forEach(([city, coords]) => {
-  L.marker([coords.lat, coords.lon], {
+  const cities = L.marker([coords.lat, coords.lon], {
     icon: L.divIcon({
       className: "state-label",
-      html: city,
+
+      html: `<div data-capital="${city}">${city}</div>`,
     }),
   })
-    .addTo(map)
+
     .on("click", () => showForecast(city));
+  if (
+    city === "Ikeja" ||
+    city === "Abuja" ||
+    city === "kano" ||
+    city === "Jos" ||
+    city === "Sokoto" ||
+    city === "Maiduguri" ||
+    city === "Port Harciurt" ||
+    city === "Enugu" ||
+    city === "Benin City" ||
+    city === "Calabar" ||
+    city === "Yola" ||
+    city === "Ibadan" ||
+    city === "Kaduna" ||
+    city === "Ilorin"
+  ) {
+    cities.addTo(majorCities);
+  } else {
+    cities.addTo(minorCities);
+  }
+});
+majorCities.addTo(map);
+majorCities.addTo(map);
+
+map.on("zoomend", () => {
+  if (map.getZoom() >= 6.5) {
+    map.addLayer(minorCities);
+  } else {
+    map.removeLayer(minorCities);
+  }
+});
+
+const windVarBtn = document.querySelectorAll(".wind-var");
+const precipVarBtn = document.querySelector(".precip-var");
+const tempVarBtn = document.querySelector(".temperature-var");
+
+const tempLgd = document.querySelector(".temp");
+const windLgd = document.querySelector(".wind");
+const precipLgd = document.querySelector(".precip");
+
+function tempLegend() {
+  tempLgd.style.display = "block";
+  windLgd.style.display = "none";
+  precipLgd.style.display = "none";
+}
+function precipLegend() {
+  tempLgd.style.display = "none";
+  windLgd.style.display = "none";
+  precipLgd.style.display = "block";
+}
+function windLegend() {
+  tempLgd.style.display = "none";
+  windLgd.style.display = "block";
+  precipLgd.style.display = "none";
+}
+precipVarBtn.addEventListener("click", precipLegend);
+tempVarBtn.addEventListener("click", tempLegend);
+windVarBtn.forEach((button) => {
+  button.addEventListener("click", windLegend);
 });

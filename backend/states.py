@@ -177,7 +177,7 @@ def create_10wind_overlay(path,  forecast_hour, forecast):
         speed = float(data[row, col])
         direction=(270-(np.degrees(np.arctan2(v_comp, u_comp))))%360
         cardinal_direction = cardinal(direction)
-       
+             
        
         forecast[forecast_hour][state]["10M wind"] = {
         "speed": speed,

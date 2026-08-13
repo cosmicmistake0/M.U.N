@@ -65,7 +65,8 @@ overlays = [
         "name": "temperature",
         "variable": "2 metre temperature",
         "cmap": "hot",
-        "levels": np.arange(10,40,2),
+        "levels": np.arange(10,40
+        ,2),
       
         "offset": -273.15
     },

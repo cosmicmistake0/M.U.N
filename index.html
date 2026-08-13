@@ -20,6 +20,124 @@
     <main>
       <div class="container">
         <div class="map-container">
+          <div class="legend precip">
+            <div>
+              <p>0–0.5 mm</p>
+              <div class="color zero"></div>
+            </div>
+
+            <div>
+              <p>0.5–1 mm</p>
+              <div class="color one"></div>
+            </div>
+
+            <div>
+              <p>1–2 mm</p>
+              <div class="color two"></div>
+            </div>
+
+            <div>
+              <p>2–5 mm</p>
+              <div class="color three"></div>
+            </div>
+
+            <div>
+              <p>5–10 mm</p>
+              <div class="color four"></div>
+            </div>
+
+            <div>
+              <p>10–20 mm</p>
+              <div class="color five"></div>
+            </div>
+
+            <div>
+              <p>20–50 mm</p>
+              <div class="color six"></div>
+            </div>
+
+            <div>
+              <p>50–100 mm</p>
+              <div class="color seven"></div>
+            </div>
+
+            <div>
+              <p>100+ mm</p>
+              <div class="color eight"></div>
+            </div>
+          </div>
+          <div class="legend temp">
+            <div>
+              <p>10°C</p>
+              <div class="color temp-zero"></div>
+            </div>
+
+            <div>
+              <p>15°C</p>
+              <div class="color temp-one"></div>
+            </div>
+
+            <div>
+              <p>20°C</p>
+              <div class="color temp-two"></div>
+            </div>
+
+            <div>
+              <p>25°C</p>
+              <div class="color temp-three"></div>
+            </div>
+
+            <div>
+              <p>30°C</p>
+              <div class="color temp-four"></div>
+            </div>
+
+            <div>
+              <p>35°C</p>
+              <div class="color temp-five"></div>
+            </div>
+
+            <div>
+              <p>40°C+</p>
+              <div class="color temp-six"></div>
+            </div>
+          </div>
+          <div class="legend wind">
+            <div>
+              <p>0–5 m/s</p>
+              <div class="color wind-zero"></div>
+            </div>
+
+            <div>
+              <p>5–10 m/s</p>
+              <div class="color wind-one"></div>
+            </div>
+
+            <div>
+              <p>10–15 m/s</p>
+              <div class="color wind-two"></div>
+            </div>
+
+            <div>
+              <p>15–20 m/s</p>
+              <div class="color wind-three"></div>
+            </div>
+
+            <div>
+              <p>20–25 m/s</p>
+              <div class="color wind-four"></div>
+            </div>
+
+            <div>
+              <p>25–30 m/s</p>
+              <div class="color wind-five"></div>
+            </div>
+
+            <div>
+              <p>30+ m/s</p>
+              <div class="color wind-six"></div>
+            </div>
+          </div>
           <div class="forecast-hours">
             <button id="time" data-hour="f000">00H</button>
             <button id="time" data-hour="f012">12H</button>
@@ -29,10 +147,15 @@
             <button id="time" data-hour="f060">60H</button>
             <button id="time" data-hour="f072">72H</button>
           </div>
+
           <div class="weather-variable">
             <ul>
               <li>
-                <button id="variable" data-variable="temperature">
+                <button
+                  class="temperature-var"
+                  id="variable"
+                  data-variable="temperature"
+                >
                   <div class="weather-icon">
                     <svg
                       viewBox="0 0 24 24"
@@ -60,7 +183,11 @@
                 <p>Temperature</p>
               </li>
               <li>
-                <button id="variable" data-variable="precipitation">
+                <button
+                  class="precip-var"
+                  id="variable"
+                  data-variable="precipitation"
+                >
                   <div class="weather-icon">
                     <svg
                       viewBox="0 0 32 32"
@@ -108,7 +235,7 @@
                 <p>Rainfall</p>
               </li>
               <li>
-                <button data-variable="wind_10m" id="variable">
+                <button class="wind-var" data-variable="wind_10m" id="variable">
                   <div class="weather-icon">
                     <svg
                       viewBox="0 0 24 24"
@@ -136,7 +263,7 @@
                 <p>Wind</p>
               </li>
               <li>
-                <button data-variable="wind850" id="variable">
+                <button class="wind-var" data-variable="wind850" id="variable">
                   <div class="weather-icon">
                     <svg
                       viewBox="0 0 24 24"
@@ -164,7 +291,7 @@
                 <p>Wind-850</p>
               </li>
               <li>
-                <button data-variable="wind700" id="variable">
+                <button class="wind-var" data-variable="wind700" id="variable">
                   <div class="weather-icon">
                     <svg
                       viewBox="0 0 24 24"
