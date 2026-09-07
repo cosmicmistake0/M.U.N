@@ -112,7 +112,7 @@ function showForecast(state) {
 
   forecastHtml.innerHTML = html;
 }
-showForecast("Ikeja");
+showForecast("Abuja");
 const capitals = {
   Umuahia: { lat: 5.53294, lon: 7.49433 },
 

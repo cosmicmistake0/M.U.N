@@ -309,9 +309,7 @@ ul {
 .wind-six {
   background: #fde725;
 }
-.temperature-var {
-}
-.precip-var {
-}
-.wind-var {
+.chart-container {
+  width: 100%;
+  height: 400px;
 }
