@@ -1,3 +1,4 @@
+import { chartData } from "./graph.js";
 const response = await fetch("/backend/data/20260711/forecast.json");
 const forecast = await response.json();
 var map = L.map("map");
@@ -199,7 +200,10 @@ Object.entries(capitals).forEach(([city, coords]) => {
     }),
   })
 
-    .on("click", () => showForecast(city));
+    .on("click", () => {
+      showForecast(city);
+      chartData(city);
+    });
   if (
     city === "Ikeja" ||
     city === "Abuja" ||
